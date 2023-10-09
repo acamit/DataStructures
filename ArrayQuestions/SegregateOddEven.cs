@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ArrayQuestions
+﻿namespace ArrayQuestions
 {
     internal class SegregateOddEven
     {
@@ -22,14 +16,11 @@ namespace ArrayQuestions
                 }
                 ++j;
             }
-
-           
         }
+
         public void Swap(int[] arr, int i, int j)
         {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            (arr[i], arr[j]) = (arr[j], arr[i]);
         }
     }
 }

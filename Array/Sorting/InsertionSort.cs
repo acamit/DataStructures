@@ -1,6 +1,4 @@
-﻿using System.Collections.Concurrent;
-
-namespace Array.Sorting
+﻿namespace Array.Sorting
 {
     internal class InsertionSort
     {

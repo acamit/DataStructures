@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ArrayQuestions
+﻿namespace ArrayQuestions
 {
     internal class WaveArray
     {
@@ -36,9 +30,7 @@ namespace ArrayQuestions
 
         void swap(int[] arr, int a, int b)
         {
-            int temp = arr[a];
-            arr[a] = arr[b];
-            arr[b] = temp;
+            (arr[a], arr[b]) = (arr[b], arr[a]);
         }
 
         // O(N)
