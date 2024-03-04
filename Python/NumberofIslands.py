@@ -24,7 +24,7 @@ class Solution:
                     if row+dr<rows and col+dc<cols \
                         and grid[r][c] == "1"\
                         and (r, c) not in visited:
-                            visited.add(r, c)
+                            visited.add((r, c))
                             q.append((r, c))
 
 

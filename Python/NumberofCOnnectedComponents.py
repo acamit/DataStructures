@@ -2,12 +2,13 @@ from typing import List
 
 
 def countComponents(self, n: int, edges: List[List[int]]) -> int:
-    par =[i for i in range(n)]
+    par =[i for i in range(n)] # parent
     rank = [1]*n
 
     # find root parent1
     def find(n1):
         res = n1
+        # get to the root parent
         while res != par[res]:
             par[res] = par[par[res]]
             res = par[res]
