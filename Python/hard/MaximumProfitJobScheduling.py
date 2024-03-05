@@ -12,7 +12,7 @@ class Solution:
                 return cache[i]
             # don't include
             res = dfs(i+1)
-            bisect.bisect(intervals, (intervals[i][1], -1, -1)) # build in binary search for python
+            j = bisect.bisect(intervals, (intervals[i][1], -1, -1)) # build in binary search for python
             # j = i+1
             # while j<len(intervals):
             #     if intervals[i][1] <= intervals[j][0]:
@@ -20,7 +20,7 @@ class Solution:
             #     j+=1
 
             # include
-            res = max(intervals[i][2]+ dfs(j))
+            res = max(intervals[i][2]+ dfs(j), res)
             cache[i] = res
 
             return res
