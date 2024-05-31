@@ -23,4 +23,4 @@ class Solution:
             for n2, w2 in edges[n1]:
                 heapq.heappush(minHeap, (w2 + w1, n2))
         
-        return t if len(visit) == n else 1
+        return t if len(visit) == n else -1
