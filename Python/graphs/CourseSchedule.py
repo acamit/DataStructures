@@ -1,20 +1,20 @@
 class Solution:
     def CourseSchedule(self, numCourses, preRequisites):
-        preMap = { i:[] for i in range(numCourses)} 
-
+        preMap = {i:[] for i in range(numCourses)}
         for crs, pre in preRequisites:
             preMap[crs].append(pre)
-        
+
         visitSet = set()
 
         def dfs(crs):
             if crs in visitSet:
-                return False # loop detected
+                return False
 
             if preMap[crs] == []:
-                return True # no prerequsite
+                return True
             
-            visitSet.add(crs)
+            visitSet.add(crs) 
+
             for pre in preMap[crs]:
                 if not dfs(pre):
                     return False
@@ -22,9 +22,8 @@ class Solution:
             visitSet.remove(crs)
             preMap[crs] = []
             return True
-        
+
         for crs in range(numCourses):
             if not dfs(crs):
                 return False
         return True
-
