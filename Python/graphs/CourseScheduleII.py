@@ -3,10 +3,10 @@ from typing import List
 
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        # build an agency list
+        # build an adjacency list
         prereq = { c:[] for c in range(numCourses) }
 
-        for crs, pre in prerequisites:    
+        for crs, pre in prerequisites:
             prereq[crs].append(pre)
 
         """
@@ -17,13 +17,12 @@ class Solution:
         
         """   
         output = []
-
         visit, cycle = set(), set()
 
         def dfs(crs):
             if crs in cycle:
-                return False                          
-            
+                return False
+                        
             if crs in visit:
                 return True
             
